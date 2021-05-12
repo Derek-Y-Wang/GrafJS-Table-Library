@@ -1,4 +1,4 @@
-# js-library-wangder1
+# GrafJS
 Landing page: https://grafjs.herokuapp.com/example.html
 Documentation: https://grafjs.herokuapp.com/doc.html
 
