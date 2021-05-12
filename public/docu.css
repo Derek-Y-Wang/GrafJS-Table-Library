@@ -1,0 +1,39 @@
+html{
+    height: 100%;
+}
+body{
+    margin: 0px;
+}
+
+.title-div {
+    background-color: lightsalmon;
+    width: 100%;
+    height: 200px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.title{
+    padding-top: 50px;
+    margin-left: 20px;
+    font-size: 72px;
+}
+
+.link{
+    margin-left: 20px;
+}
+
+.spacing{
+    margin-left: 20px;
+}
+
+.required{
+    color: blue;
+}
+
+li{
+    padding-top: 5px;
+}
+
+code{
+    color: black;
+}

@@ -1,0 +1,132 @@
+<html lang ="en">
+	<head>
+		<meta charset="uft-8">
+		<title>Documentation</title>
+		<link rel="stylesheet" href="./docu.css">
+		
+	</head>
+	<body>
+        <div class="title-div">
+			<div class="title">Graf.JS Documentation</div>
+			
+			<a href="./example.html" class="link">Main</a>
+        </div>
+        
+        <div class="spacing">
+            <div class="getting-started">
+                <h1>Getting Started: </h1>
+                <ul>1. Download Graf.JS from https://github.com/csc309-fall-2020/js-library-wangder1</ul>
+                <ul>2. Drag <b>graf.js</b> into the same directory as your HTML or Javascript.</ul>
+                <ul>3. Add <code >
+                    &ltscript type="text/javascript" src="graf.js"&gt&lt/script&gt</code>
+                    in your HTML file.
+                </ul>
+                <ul>
+                    4. Create a &ltdiv&gt in your HTML file with an specific ID such as &ltdiv id="sample"&gt
+                </ul>
+                <ul>
+                    5. You must now initialize the Graf object in your Javascript file. Initialize the Graf object with the ID of where you would want to insert a table
+                    (id="sample" for example.)
+                </ul>
+            </div>
+            <div>
+                <h1>Content:</h1>
+                <ul><h2>Initialization:</h2>
+                    <div>
+                        <b>new Graf({<br>
+                            <div class="spacing">data:  <i>[[value,...],...]<i class="required">(required)</i></i>,<br></div>
+                            <div class="spacing">columns: <i>[value,...]<i class="required">(required)</i></i>,<br></div>
+                            <div class="spacing">anchor: <i>String<i class="required">(required)</i></i>,<br></div>
+                            <div class="spacing">title: <i>String<i class="required">(required)</i></i>,<br></div>
+                            <div class="spacing">style: <i>String</i>,<br></div>
+                            <div class="spacing">height: <i>String</i>,<br></div>
+                            <div class="spacing">width: <i>String</i>,<br></div>
+                            <div class="spacing">titleSize: <i>String</i>,<br></div>
+                            <div class="spacing">columnFont: <i>String</i>,<br></div>
+                            <div class="spacing">titleFont: <i>String</i><br></div>
+                        
+                        });</b>
+                        
+                    </div>
+                    <li><b>data:</b> User must input the data in the form of a list of lists, in the form of <b><i>[[value,...],...]</i></b>. Each inner
+                        list corresponds to a column in the table.
+                    </li>
+                    <li><b>columns:</b> User must input the data in the form of a list, in the form of <b><i>[value,...]</i></b>. Each value in the list 
+                        is the label for a column.
+                    </li>
+                    <li><b>anchor:</b> User must input the ID element in the form of a <b><i>String</i></b>, this will allow the library to know where to place 
+                        the table in the HTML file. 
+                    </li>
+                    <li><b>title:</b> User must input the title of the table in the form of a <b><i>String</i></b>, this will allow the library to generate a 
+                        title for the table and create a table ID.
+                    </li>
+                    <li><b>style:</b> User must input the title of the table in the form of a <b><i>String</i></b>, user has a choice between three styles,
+
+                                <li style="margin-left: 50px;"><i>linear:</i> This is the default style.</li>
+                                <li style="margin-left: 50px;"><i>clear:</i> No borders between data cells.</li>
+                                <li style="margin-left: 50px;"><i>boxy:</i> Boxed data cells.</li>
+                    </li>
+                    <li><b>height:</b> User is able to set the height of the table in the form a <b><i>String</i></b>. Must be in CSS format
+                        such as <b><i>"40px"</i></b>.
+                    </li>
+                    <li><b>width:</b> User is able to set the width of the table in the form a <b><i>String</i></b>. Must be in CSS format
+                        such as <b><i>"40px"</i></b>.
+                    </li>
+                    <li><b>titleSize:</b> User is able to set the size of the of the title in the form a <b><i>String</i></b>. Must be in CSS format
+                        such as <b><i>"40px"</i></b>.
+                    </li>
+                    <li><b>columnFont:</b> User is able to set the size of the of the font of the column labels in the form a <b><i>String</i></b>. Must be in CSS format
+                        such as <b><i>"Times New Roman"</i></b>.
+                    </li>
+                    <li><b>titleFont:</b> User is able to set the size of the of the font of the title in the form a <b><i>String</i></b>. Must be in CSS format
+                        such as <b><i>"Times New Roman"</i></b>.
+                    </li>
+            
+                </ul>
+                <ul><h2>Functions</h2>
+                    <li><b>makeFullTable():</b>
+                        Generates the table based on data and other given values upon initialization.
+                    </li>
+                    <li><b>makeTableByRows(start=Integer, end=Integer):</b>
+                        Generates the table rows within the given indexes on data and other given values upon initialization. 
+                        <b>Default <i>start</i> and <i>end</i> is null and leaving them empty will default to the last or first row respectively.</b>
+                    </li>
+                    <li><b>addColumn(col_data:List, col_name:String):</b>
+                        Adds a new column to an existing table. <b>col_data</b> is a list containing all the elements in the new column and <b>col_name</b> will be the new column label.
+                    </li>
+                    <li><b>addRow(row_data:List):</b>
+                        Adds a new row to an existing table. <b>row_data</b> is a list containing all the elements in the new row.
+                    </li>
+                    <li><b>removeColumn(col_name:Integer/String):</b>
+                        Removes a column from the existing table. Parameter can be either a <b>String</b> or <b>Integer</b>. 
+                        Removes column by label name if <b>String</b>,removes column by index if <b>Integer.</b>
+                    </li>
+                    <li><b>removeRow(row_index:Integer):</b>
+                        Removes a row from the table based on inputed row index.
+                    </li>
+                    <li><b>fillNullColMean():</b>
+                        Should be called before creating the table. Will replace all empty data cells with the mean of the column.
+                    </li>
+                    <li><b>fillNullColZeros():</b>
+                        Should be called before creating the table. Will replace all empty data cells with zero.
+                    </li>
+                    <li><b>fillNullCol(value):</b>
+                        Should be called before creating the table. Will replace all empty data cells with any value.
+                    </li>
+                    <li><b>getColumnNames():</b>
+                        Returns all column labels in the form of a <b>List</b>.
+                    </li>
+                    <li><b>printSelectRow(index:Integer):</b>
+                        Returns all values at the indexed row in the form of a <b>List</b>.
+                    </li>
+                    <li><b>printSelectColumn(index:Integer):</b>
+                        Returns all values at the indexed column in the form of a <b>List</b>.
+                    </li>
+                </ul>
+            </div>
+        </div>
+		
+		
+           
+	</body>
+</html>
